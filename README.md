@@ -1,58 +1,20 @@
-# Roots Natural Kitchen Queueing Analysis
+### SYS 3060, Stochastic Decision Models; Spring 2026
 
-A data-driven analysis of the in-person ordering process at Roots Natural Kitchen using queueing theory and discrete-event simulation.
+This repository contains my coursework for SYS 3060 at the University of Virginia. The four assignments cover probability, continuous- and discrete-time Markov chains, and absorbing processes. The larger part of the repository is our final team project: a queueing analysis of the lunchtime ordering process at Roots Natural Kitchen.
 
-## Project Structure
+## Project debrief
 
-```
-.
-├── Analysis/                            
-│   ├── Roots Analysis Notebook.ipynb
-│   ├── Roots Final Data.xlsx
-├── Paper/                               
-│   ├── Roots Paper.pdf
-│   ├── Figures/                         
-│   │   ├── comparison.png
-│   │   ├── distribution-fits.png
-│   │   ├── impact.png
-│   │   ├── sensitivity.png
-│   │   └── utilization.png
-├── Presentation/                        
-│   ├── Roots Presentation.pptx
-├── README.md
-├── requirements.txt
-```
+We observed 147 arrivals across three lunch periods and modeled the line as a tandem network: customers move through order taking, bowl assembly, and payment in sequence. Using the collected timestamps, we estimated arrival and service rates, checked the exponential assumptions, analyzed the system as three M/M/1 queues, and validated the results with a discrete-event simulation.
 
-## Overview
+Order taking emerged as the bottleneck, with an estimated utilization of 0.778. The analytic model predicted an average system time of 7.49 minutes, closely matching the simulation estimate of 7.45 minutes. Adding a second order-taker reduced the analytic estimate to 3.60 minutes—a 52% improvement—while simulation produced a more conservative estimate of 4.24 minutes.
 
-This project models the service process as a three-stage tandem queue:
-1. Order Taking  
-2. Assembly  
-3. Cashier / Payment  
+The study is best read as a practical application of stochastic modeling rather than a perfect account of restaurant operations. Observations came from short, busy lunch windows; grouped arrivals were sometimes recorded together; and some timestamps required cleaning. Even with those limitations, the model consistently identified the first stage as the best target for additional staffing.
 
-Using real timestamp data, the system is analyzed both analytically and through simulation to identify bottlenecks and evaluate improvements.
+## Repository contents
 
-## Methods
+- `A01/`–`A04/`: course assignments
+- `Analysis/`: cleaned data and the reproducible Jupyter notebook
+- `Paper/`: final paper and figures
+- `Presentation/`: project presentation
 
-- M/M/1 and tandem queue modeling  
-- Steady-state performance analysis  
-- Discrete-event simulation  
-- Empirical validation with real data 
-
-## Key Results
-
-- Order taking is the primary bottleneck  
-- Utilization at Stage 1 is ~0.78  
-- Analytical model predicts ~7.49 min average system time  
-- Simulation predicts ~7.45 min  
-- Adding a second order-taker reduces time to ~3.60 min (~52% improvement)  
- 
-
-## How to Run
-
-Install dependencies:
-```bash
-pip install -r requirements.txt
-```
-
-Run the main notebook in `Analysis/` to reproduce results.
+To reproduce the analysis, install `requirements.txt` and run `Analysis/Roots Analysis Notebook.ipynb`.
