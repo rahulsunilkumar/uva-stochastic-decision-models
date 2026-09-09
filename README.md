@@ -1,4 +1,4 @@
-### SYS 3060, Stochastic Decision Models; Spring 2026
+# SYS 3060, Stochastic Decision Models; Spring 2026
 
 This repository contains my coursework for SYS 3060 at the University of Virginia. The four assignments cover probability, continuous- and discrete-time Markov chains, and absorbing processes. The larger part of the repository is our final team project: a queueing analysis of the lunchtime ordering process at Roots Natural Kitchen.
 
@@ -13,8 +13,8 @@ The study is best read as a practical application of stochastic modeling rather 
 ## Repository contents
 
 - `A01/`–`A04/`: course assignments
-- `Analysis/`: cleaned data and the reproducible Jupyter notebook
-- `Paper/`: final paper and figures
-- `Presentation/`: project presentation
+- `Project/Analysis/`: cleaned data and the reproducible Jupyter notebook
+- `Project/Paper/`: final paper and figures
+- `Project/Presentation/`: project presentation
 
 To reproduce the analysis, install `requirements.txt` and run `Analysis/Roots Analysis Notebook.ipynb`.
